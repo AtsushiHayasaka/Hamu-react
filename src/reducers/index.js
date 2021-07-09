@@ -41,10 +41,11 @@ const events = (state = [], action) => {
             const event = {title: action.title, body: action.body}
             const length = state.length;
             const id = length === 0 ? 1 : state[length - 1].id + 1
-            return [...state, {id, ...event}]
-            return state;
+            return [...state, {id, ...event}];
         case 'DELETE_EVENT':
-            return state;
+            return state.filter(event => event.id != action.id );
+    
+            
         case 'DELETE_ALL_EVENTS':
             return [];
         default:
@@ -61,5 +62,4 @@ export default events
  * 全ての要素を作り出した後、eventsに追加。
  * 
  * 今わからないこと。
- * action.typeをどのように設定して、どの様に渡されるか。
  */
