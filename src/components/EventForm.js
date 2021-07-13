@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
     CREATE_EVENT,
     DELETE_ALL_EVENTS
 }
 from "../actions";
+import AppContext from '../contexts/AppContext'
 
 
-const EventForm = ({state, dispatch}) => {
+const EventForm = () => {
+  const {state, dispatch} = useContext(AppContext);
     //App.jsからstateとdispatchが渡ってくるため、いらない
 //   const [state, dispatch] = useReducer(reducer, []); 
   const [title, setTitle] = useState("");
