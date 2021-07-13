@@ -1,5 +1,4 @@
 import React from 'react';
-import OperationLogs from './OperationLogs';
 
 const OperationLog = ({ operationLog }) => {
     return (
